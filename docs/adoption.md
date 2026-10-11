@@ -16,7 +16,7 @@ workspace/
 ```
 
 ```bash
-git clone https://github.com/<owner>/desktop-platform.git
+git clone https://github.com/jazmf-dx/desktop-platform.git
 git clone https://github.com/<owner>/desktop-base.git
 ```
 
