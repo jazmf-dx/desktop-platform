@@ -12,7 +12,7 @@ stockroom を土台に、新しいデスクトップツールを起こして最�
 | UI の実装 | React + zustand + Tailwind 4 / 素の TypeScript（トレイ常駐の小物だけ） |
 | データの置き場 | `app_data_dir()` の JSON / ユーザーが選ぶフォルダ 1 つ（SQLite） |
 | 外との接続 | なし / ブラウザ拡張 / MCP / ほか（[Optional](../standards/optional/local-server.md)） |
-| 配布の形 | 単独リポジトリ / workbench に同居（[Optional](../standards/optional/multi-tool-repo.md)） |
+| 配布の形 | 単独リポジトリ / desktop-apps に同居（[Optional](../standards/optional/multi-tool-repo.md)） |
 | `identifier` | 逆 DNS。一度決めたら変えない |
 
 ## 1. 雛形を置く
@@ -38,7 +38,7 @@ stockroom から次を写す。写した時点のコミットを `decisions/proj
 | `src/index.css` の `@theme` | そのまま |
 | `src/dev/mockBackend.ts` の骨組み | ツールの `api.ts` に合わせる |
 | `.vscode/extensions.json`、`.claude/launch.json` | そのまま |
-| `.github/workflows/build.yml`（単独）または workbench の `shelf.yml`（同居） | ツール名、ディレクトリ、feed |
+| `.github/workflows/build.yml`（単独）または desktop-apps の `shelf.yml`（同居） | ツール名、ディレクトリ、feed |
 
 トレイ常駐なら Shelf の `lib.rs`（`setup_tray`）、`update.rs`、`proxy.rs` を土台にする。
 

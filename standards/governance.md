@@ -17,7 +17,7 @@
 - 生成物（`dist/`、`src-tauri/target/`、`src-tauri/gen/schemas/`）は commit しない。
 - tag は配布の単位にだけ打つ（[Distribution](distribution.md) §5）。
 
-出どころ：stockroom の commit 履歴、workbench の README「リポジトリの決まりごと」。
+出どころ：stockroom の commit 履歴、desktop-apps（旧 workbench）の README「リポジトリの決まりごと」。
 
 ## 3. AI 利用
 

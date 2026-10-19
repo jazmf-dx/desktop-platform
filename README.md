@@ -47,7 +47,7 @@ workspace/
 ├── desktop-platform/
 ├── desktop-base/
 ├── stockroom/
-└── workbench/
+└── desktop-apps/
 ```
 
 stockroom は旧名 image-library（[2204601/stockroom](https://github.com/2204601/stockroom)）。Standard の「出どころ」はこのリポジトリのファイルを指す。

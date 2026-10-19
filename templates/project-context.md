@@ -11,7 +11,7 @@ AI と人が実装前に確認する **現在の前提**。機能要件、ロー
 | UI の実装 | React + zustand + Tailwind 4 / 素の TypeScript |
 | データの置き場 | `app_data_dir()` の JSON / ユーザーが選ぶフォルダ 1 つ（SQLite）。構造は README「<節名>」 |
 | 外との接続 | なし / ブラウザ拡張（port NNNNN）/ MCP（port NNNNN）/ ほか |
-| 配布の形 | 単独リポジトリ（tag `v*`、feed `releases/latest`）/ workbench 同居（tag `<name>-v*`、feed `<name>-updater`） |
+| 配布の形 | 単独リポジトリ（tag `v*`、feed `releases/latest`）/ desktop-apps 同居（tag `<name>-v*`、feed `<name>-updater`） |
 | 識別子 | `com.example.tool`（一度配布したら変えない） |
 | desktop-base | v0.1.0 / 未採用（stockroom の <commit> から写した） |
 

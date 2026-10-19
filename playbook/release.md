@@ -25,7 +25,7 @@
 5. CI が macOS と Windows をビルドし、draft のリリースにインストーラと更新ファイルと `latest.json` を添付する。
 6. draft の内容を確認して **Publish** する。publish するまで配布済みのアプリは旧バージョンのまま。
 
-## 手順（同居リポジトリ：workbench の形）
+## 手順（同居リポジトリ：desktop-apps の形）
 
 1. `<name>/` の中で上と同じく 3 か所のバージョンを上げる（`cargo update -p <crate>`）。
 2. `<name>/CHANGELOG.md` に節を書く。
