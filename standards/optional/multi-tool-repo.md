@@ -20,4 +20,4 @@
 
 ツールが大きくなり、リリースの頻度や依存が他と合わなくなったら単独リポジトリに出す。その版からは `releases/latest` を feed にしてよいが、配布済みのアプリは古い feed を見ているので、**古い `<name>-updater` を新しいリポジトリへ向ける `latest.json` を最後に 1 回出す**。
 
-出どころ：workbench README「リポジトリの決まりごと」、`.github/workflows/shelf.yml`。
+出どころ：desktop-apps（旧 workbench）README「リポジトリの決まりごと」、`.github/workflows/shelf.yml`。

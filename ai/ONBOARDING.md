@@ -30,7 +30,7 @@ Core Standard はすべてのツールに適用する。
 Optional Standard は該当機能を扱う場合だけ参照する。
 
 - [ローカル受付](../standards/optional/local-server.md) — 127.0.0.1 で待ち受ける HTTP（ブラウザ拡張、MCP）
-- [複数ツール同居リポジトリ](../standards/optional/multi-tool-repo.md) — workbench のように 1 リポジトリに複数ツールを置く
+- [複数ツール同居リポジトリ](../standards/optional/multi-tool-repo.md) — desktop-apps のように 1 リポジトリに複数ツールを置く
 - [トレイ常駐](../standards/optional/tray-app.md) — Shelf のようにメニューバー / タスクトレイから使う
 
 ### 2. Current library / tool choice → Recommendations

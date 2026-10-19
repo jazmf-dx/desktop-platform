@@ -11,7 +11,7 @@ workspace/
 ├── desktop-platform/     ルール
 ├── desktop-base/         共通コード（crate、npm package、template、workflow）
 ├── stockroom/
-└── workbench/
+└── desktop-apps/
     └── shelf/
 ```
 
@@ -46,7 +46,7 @@ relative path は workspace の構成に合わせます。同居リポジトリ�
 | UI の実装 | React + zustand + Tailwind 4 か、素の TypeScript か |
 | データの置き場 | `app_data_dir()` の JSON か、ユーザーが選ぶフォルダ（SQLite）か。構造は README のどこか |
 | 外との接続 | なし / ブラウザ拡張 / MCP / ほか。ポートと token の扱い |
-| 配布の形 | 単独リポジトリか workbench 同居か。tag と feed の形 |
+| 配布の形 | 単独リポジトリか desktop-apps 同居か。tag と feed の形 |
 | 識別子 | `identifier`。一度配布したら変えない |
 | desktop-base | 使っている tag。未採用なら stockroom のどのコミットから写したか |
 
