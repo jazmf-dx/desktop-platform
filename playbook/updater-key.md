@@ -5,7 +5,7 @@ Tauri Updater の minisign 鍵の生成、保管、CI への設定、鍵なし�
 ## 生成（owner で 1 回だけ）
 
 ```bash
-npx tauri signer generate -w ~/.tauri/<owner>.key
+bunx tauri signer generate -w ~/.tauri/<owner>.key
 ```
 
 - 秘密鍵 `~/.tauri/<owner>.key` と公開鍵（コマンドの出力）ができる。パスワードを付けた場合は `_PASSWORD` の Secret にも入れる。
@@ -32,15 +32,15 @@ npx tauri signer generate -w ~/.tauri/<owner>.key
 
 ## ローカルでのビルド
 
-`createUpdaterArtifacts` が有効なので、鍵なしでは `npm run tauri build` が失敗する。
+`createUpdaterArtifacts` が有効なので、鍵なしでは `bun run tauri build` が失敗する。
 
 ```bash
 # 鍵あり（更新ファイルも作る）
-TAURI_SIGNING_PRIVATE_KEY="$(cat ~/.tauri/<owner>.key)" npm run tauri build
+TAURI_SIGNING_PRIVATE_KEY="$(cat ~/.tauri/<owner>.key)" bun run tauri build
 
 # 鍵なし（インストーラだけ）
 echo '{"bundle":{"createUpdaterArtifacts":false}}' > /tmp/no-updater.json
-npm run tauri build -- --config /tmp/no-updater.json
+bun run tauri build --config /tmp/no-updater.json
 ```
 
 CI は Secret が無いときに後者へ自動で落ちる（[Distribution](../standards/distribution.md) §6）。

@@ -13,7 +13,7 @@
 - commit message は 1 行目に種別の接頭辞を付け、本文は日本語でよい。種別は `feat` / `fix` / `docs` / `chore` / `refactor` / `test` / `ci`。
   - 例：`fix: 重い処理でウィンドウが固まらないように（一覧の問い合わせ・削除・書き出し・回転）`
   - バージョンを上げる commit は `chore: vX.Y.Z`（単独リポジトリ）または `chore: <name> vX.Y.Z`（同居リポジトリ）
-- lockfile（`package-lock.json`、`Cargo.lock`）は commit する。1 リポジトリに複数のパッケージマネージャの lockfile を置かない。
+- lockfile（`bun.lock`、`Cargo.lock`）は commit する。1 リポジトリに複数のパッケージマネージャの lockfile を置かない。
 - 生成物（`dist/`、`src-tauri/target/`、`src-tauri/gen/schemas/`）は commit しない。
 - tag は配布の単位にだけ打つ（[Distribution](distribution.md) §5）。
 
@@ -45,18 +45,18 @@
 
 | gate | command | 対象 |
 |---|---|---|
-| 型チェック | `npx tsc --noEmit` | `src/` |
+| 型チェック | `bunx tsc --noEmit` | `src/` |
 | Linter | ツールの `package.json` に定義した lint script | `src/` |
 | フォーマット | `cargo fmt --check --manifest-path src-tauri/Cargo.toml` | `src-tauri/` |
 | 静的検査 | `cargo clippy --manifest-path src-tauri/Cargo.toml -- -D warnings` | `src-tauri/` |
 | Rust テスト | `cargo test --manifest-path src-tauri/Cargo.toml` | `src-tauri/` |
-| ビルド | `npm run tauri build`（macOS Apple Silicon と Windows の両方） | 配布物 |
+| ビルド | `bun run tauri build`（macOS Apple Silicon と Windows の両方） | 配布物 |
 
 - Rust テストと型チェックは Linux の runner で走らせてよい（安い）。ビルドは配布対象の OS で走らせる。
 - 既存ツール（stockroom、Shelf）は Linter、fmt、clippy が CI に無い。desktop-base の再利用 workflow に入れる形で埋め、それまでは **Adopt going forward** として扱う（[Adoption Guide](../docs/adoption.md) §6）。
 - gate を通すためにテストを skip、`#[allow]`、`// @ts-ignore` で黙らせない。必要なら理由を書いて PR で説明する。
 
-出どころ：stockroom の `.github/workflows/build.yml`（`cargo test` と `tsc --noEmit` の test job、macOS / Windows のビルド matrix）、`package.json` の `npm test`。
+出どころ：stockroom の `.github/workflows/build.yml`（`cargo test` と `tsc --noEmit` の test job、macOS / Windows のビルド matrix）、`package.json` の `test` script（`bun run test`）。
 
 ## 5. Standard からの逸脱
 

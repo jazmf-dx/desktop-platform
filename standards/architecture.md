@@ -135,7 +135,7 @@ interface Command {
 - UI はブラウザのモックで手で確認する（[ブラウザで UI を作る](../playbook/ui-in-browser.md)）。モックは `api.ts` と同じ型で書き、`api.ts` を変えたらモックも変える。
 - 性能はテストデータの生成 example（`examples/seed.rs`）で測る。1 万件で一覧が固まらないことを確かめてから出す。
 
-出どころ：stockroom `package.json` の `npm test`、`src-tauri/examples/seed.rs`、`src/dev/mockBackend.ts`。
+出どころ：stockroom `package.json` の `test` script（`bun run test`）、`src-tauri/examples/seed.rs`、`src/dev/mockBackend.ts`。
 
 ## 10. ドキュメント
 

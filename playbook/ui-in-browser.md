@@ -1,6 +1,6 @@
 # ブラウザで UI を作る
 
-Rust を動かさず、ブラウザだけで画面を作って確かめる。UI の変更が多いときに `npm run tauri dev` の再ビルドを待たずに済む。
+Rust を動かさず、ブラウザだけで画面を作って確かめる。UI の変更が多いときに `bun run tauri dev` の再ビルドを待たずに済む。
 
 ## 仕組み
 
@@ -18,7 +18,7 @@ if (import.meta.env.DEV && !("__TAURI_INTERNALS__" in window)) {
 ## 使い方
 
 ```bash
-npm run dev                 # http://localhost:1420
+bun run dev                 # http://localhost:1420
 ```
 
 `.claude/launch.json` に `ui-mock`（`vite --port 1430 --strictPort`）を置いておくと、`tauri dev` の 1420 と同時に開ける。

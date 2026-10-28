@@ -45,8 +45,8 @@ stockroom から次を写す。写した時点のコミットを `decisions/proj
 ## 2. 名前とアイコン
 
 ```bash
-npm install
-npx tauri icon app-icon.svg      # src-tauri/icons/ を生成。svg と生成物を commit
+bun install
+bunx tauri icon app-icon.svg      # src-tauri/icons/ を生成。svg と生成物を commit
 ```
 
 ## 3. AI の入口と README
@@ -58,9 +58,9 @@ npx tauri icon app-icon.svg      # src-tauri/icons/ を生成。svg と生成物
 ## 4. 動かす
 
 ```bash
-npm run tauri dev        # アプリを起動
-npm run dev              # ブラウザで UI だけ（モック。playbook/ui-in-browser.md）
-npm test                 # cargo test + tsc --noEmit
+bun run tauri dev        # アプリを起動
+bun run dev              # ブラウザで UI だけ（モック。playbook/ui-in-browser.md）
+bun run test             # cargo test + tsc --noEmit
 ```
 
 `package.json` の `scripts` に `test` と `lint` を置く。CI は [Governance](../standards/governance.md) §4 の gate を全部回す。
@@ -76,7 +76,7 @@ npm test                 # cargo test + tsc --noEmit
 - [ ] ウィンドウの大きさと位置が次回に戻る、二重起動しない
 - [ ] README に初回インストールの警告の手順がある（[Distribution](../standards/distribution.md) §3 の文面）
 - [ ] CHANGELOG に `## <version>` の節がある
-- [ ] `npm test` と CI の gate が通る
+- [ ] `bun run test` と CI の gate が通る
 - [ ] macOS と Windows の両方で一度インストールして起動した
 
 リリースの操作は [リリース Playbook](release.md)。

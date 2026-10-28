@@ -7,7 +7,7 @@
 ## ルール
 
 - ツールは `<name>/` ディレクトリにまとめ、使い方と開発手順はそのディレクトリの `README.md` に書く。リポジトリ直下の README はツールの一覧表だけを持つ。
-- 各ツールは自分の `package.json`、`package-lock.json`、`src-tauri/Cargo.lock` を持つ。リポジトリ全体の workspace にしない。
+- 各ツールは自分の `package.json`、`bun.lock`、`src-tauri/Cargo.lock` を持つ。リポジトリ全体の workspace にしない。
 - CI はツールごとに `.github/workflows/<name>.yml` を置き、`paths` でそのディレクトリと workflow 自身が変わったときだけ動かす。tag には path filter が効かないので、tag の pattern を別に書く。
 - リリースの tag は `<name>-v<version>`。tag と `<name>/src-tauri/tauri.conf.json` の version が違えば失敗させる。
 - アプリ内アップデートの feed は **ツールごとの固定リリース `<name>-updater`** の `latest.json`。`releases/latest` は他のツールのリリースと取り合いになるので使わない。

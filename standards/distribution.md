@@ -17,7 +17,7 @@
 
 - `identifier` は逆 DNS 形式で、**一度配布したら変えない**。設定・データ・ログのフォルダ名になるので、変えると既存ユーザーのデータが見えなくなる。新規ツールは `decisions/project-context.md` に決めてから初回リリースする。
 - `productName` は人が読む名前。インストーラのファイル名と `.app` の名前になる。
-- バージョンは **3 か所を同じ値** にする：`package.json`、`src-tauri/tauri.conf.json`、`src-tauri/Cargo.toml`。lockfile も更新する（`npm version X --no-git-tag-version`、`cargo update -p <crate>`）。
+- バージョンは **3 か所を同じ値** にする：`package.json`、`src-tauri/tauri.conf.json`、`src-tauri/Cargo.toml`。lockfile も更新する（`bun pm version X --no-git-tag-version`、`cargo update -p <crate>`）。
 - SemVer。MAJOR は 0 のままでよい。データ形式の変更があるときは MINOR を上げ、CHANGELOG に書く。
 
 出どころ：stockroom README「リリース」、Shelf README「リリース手順」。
@@ -100,6 +100,7 @@ Apple Developer ID と Windows のコード署名は使わない。代わりに�
 |---|---|
 | `actions/checkout` | `v5` 以上 |
 | `actions/setup-node` | `v5` 以上 |
+| `oven-sh/setup-bun` | `v2` 以上 |
 | `actions/upload-artifact` | `v6` 以上（`v5` は既定が Node.js 20 のまま） |
 | `actions/download-artifact` | `v7` 以上（`v6` は既定が Node.js 20 のまま） |
 | `actions/cache` | `v5` 以上 |
@@ -108,7 +109,7 @@ Apple Developer ID と Windows のコード署名は使わない。代わりに�
 
 `dtolnay/rust-toolchain` と `lycheeverse/lychee-action` は composite action なので対象外。表に無い action は、その `action.yml` の `runs.using` が `node24` であることを確かめる。
 
-出どころ：stockroom `.github/workflows/build.yml`、Shelf `.github/workflows/shelf.yml`。Node.js 24 の版は各 action のリリースノート（確認日：2026-10-12）。
+出どころ：stockroom `.github/workflows/build.yml`、Shelf `.github/workflows/shelf.yml`。Node.js 24 の版は各 action のリリースノート（確認日：2026-10-12。`oven-sh/setup-bun` は 2026-10-28）。
 
 ## 7. ビルド設定
 
