@@ -11,7 +11,7 @@
 
 1. バージョンを 3 か所で上げる。
    ```bash
-   npm version 0.18.0 --no-git-tag-version          # package.json と package-lock.json
+   bun pm version 0.18.0 --no-git-tag-version       # package.json（bun.lock には版が無い）
    # src-tauri/tauri.conf.json の "version"
    # src-tauri/Cargo.toml の version、そのあと
    cargo update -p stockroom --manifest-path src-tauri/Cargo.toml   # Cargo.lock

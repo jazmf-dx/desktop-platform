@@ -2,6 +2,19 @@
 
 release は `v<major>.<minor>.<patch>` の tag と、この file の `## <version>` の節で行う。各節に「既存のツールで対応が必要な変更」の有無を必ず書く。
 
+## 0.6.0
+
+パッケージマネージャの既定を npm から Bun にした。Web アプリ向けの Platform と同じにして、コマンドと lockfile の扱いを 1 つにする。npm を選んだ理由だった `tauri-action` は、今は `bun.lock` を見て自動で Bun を使う（[ADR-0005](decisions/adr-0005-bun-as-package-manager.md)）。
+
+### 内容
+
+- [Stack](recommendations/stack.md)「パッケージマネージャ」：既定を Bun に。`bun.lock` を commit し、CI は `oven-sh/setup-bun` と `bun install --frozen-lockfile`。Node.js 22 は残す。`package.json` の `test` は `bun run test` で呼ぶ（`bun test` は Bun のテストランナー）。引数は `--` を挟まずに渡す（`bun run tauri build --target …`）
+- [Governance](standards/governance.md) §2・§4、[Distribution](standards/distribution.md) §2・§5（`oven-sh/setup-bun` は `v2` 以上）、雛形の `CLAUDE.md`、Playbook のコマンドを Bun に
+
+### 既存のツールで対応が必要な変更
+
+- **Adopt going forward**：stockroom と desktop-apps の各ツールを Bun に移す。`package-lock.json` を消して `bun.lock` を commit し、CI・`tauri.conf.json` の `beforeDevCommand` / `beforeBuildCommand`・README・`CLAUDE.md` のコマンドを直す
+
 ## 0.5.0
 
 アプリとしての基本（アップデートの知らせ方、設定画面、ヘルプメニュー）をどのツールでも同じ形にした。アップデートのダイアログにアプリの名前が無く、急に出てくるとどのアプリからか分からなかった。リリースノートをそのまま載せていたツールもあり、ダイアログが長くなっていた。

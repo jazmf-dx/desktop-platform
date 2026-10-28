@@ -8,6 +8,7 @@
 | [ADR-0002](adr-0002-rules-and-base-repositories.md) | ルール（desktop-platform）とコード（desktop-base）を 2 つのリポジトリに分ける |
 | [ADR-0003](adr-0003-core-and-optional-standards.md) | Core / Optional Standard と Recommendation の区分の基準 |
 | [ADR-0004](adr-0004-layout-stability-ahead-of-source.md) | 「表示を切り替えても操作の位置を変えない」を、出どころの実装より先に UI Standard へ入れる |
+| [ADR-0005](adr-0005-bun-as-package-manager.md) | パッケージマネージャの既定を npm から Bun にする |
 
 ## 書き方
 

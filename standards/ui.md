@@ -89,7 +89,7 @@
 ## 8. アイコン
 
 - UI のアイコンは `lucide-react`。
-- アプリのアイコンは `app-icon.svg` をリポジトリに置き、`npx tauri icon app-icon.svg` で `src-tauri/icons/` を生成する。生成物も commit する。
+- アプリのアイコンは `app-icon.svg` をリポジトリに置き、`bunx tauri icon app-icon.svg` で `src-tauri/icons/` を生成する。生成物も commit する。
 
 出どころ：Shelf README「構成」。
 
