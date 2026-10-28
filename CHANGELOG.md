@@ -8,7 +8,7 @@ release は `v<major>.<minor>.<patch>` の tag と、この file の `## <versio
 
 ### 内容
 
-- [Stack](recommendations/stack.md)「パッケージマネージャ」：既定を Bun に。`bun.lock` を commit し、CI は `oven-sh/setup-bun` と `bun install --frozen-lockfile`。Node.js 22 は残す。`package.json` の `test` は `bun run test` で呼ぶ（`bun test` は Bun のテストランナー）
+- [Stack](recommendations/stack.md)「パッケージマネージャ」：既定を Bun に。`bun.lock` を commit し、CI は `oven-sh/setup-bun` と `bun install --frozen-lockfile`。Node.js 22 は残す。`package.json` の `test` は `bun run test` で呼ぶ（`bun test` は Bun のテストランナー）。引数は `--` を挟まずに渡す（`bun run tauri build --target …`）
 - [Governance](standards/governance.md) §2・§4、[Distribution](standards/distribution.md) §2・§5（`oven-sh/setup-bun` は `v2` 以上）、雛形の `CLAUDE.md`、Playbook のコマンドを Bun に
 
 ### 既存のツールで対応が必要な変更

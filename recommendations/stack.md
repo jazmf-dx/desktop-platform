@@ -86,6 +86,7 @@
 
 - `bun.lock` を commit し、CI は `oven-sh/setup-bun` と `bun install --frozen-lockfile`。1 リポジトリに複数のパッケージマネージャの lockfile を置かない（`package-lock.json` は消す）。
 - スクリプトは `bun run <name>` で呼ぶ。**`bun test` は Bun 自身のテストランナーなので、`package.json` の `test` は `bun run test`**。
+- 引数は `--` を挟まずに続ける（`bun run tauri build --target aarch64-apple-darwin`）。`bun run` は `node_modules/.bin` のコマンドに `--` をそのまま渡し、`tauri build -- …` だと `--` 以降が cargo の引数になる。
 - Node.js 22 も入れる（CI は `actions/setup-node`）。`bun run` は Vite と Tauri の CLI を Node.js で動かす（各 CLI の shebang が `node`）。
 - Tauri の CLI と `tauri-action` は Bun に対応している。`tauri-action` は `bun.lock` があり runner に `bun` があれば、自動で `bun` を使う。
 - Web アプリ向け Platform の既定（Bun）と同じ。2026-10-11 の時点では npm を既定にしていた（[ADR-0005](../decisions/adr-0005-bun-as-package-manager.md)）。
